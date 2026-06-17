@@ -1,14 +1,11 @@
 import { buildBot } from "./bot.js";
 
-const token = process.env.TELEGRAM_BOT_TOKEN;
+// Runtime entry (dist/index.js). BOT_TOKEN is injected at runtime as a secret.
+const token = process.env.BOT_TOKEN;
 if (!token) {
-  console.error("TELEGRAM_BOT_TOKEN environment variable is required");
+  console.error("BOT_TOKEN is required");
   process.exit(1);
 }
 
 const bot = buildBot(token);
-bot.start({
-  onStart: (info) => {
-    console.log(`QuoteBot started as @${info.username}`);
-  },
-});
+bot.start();
