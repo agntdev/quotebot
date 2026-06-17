@@ -1,0 +1,28 @@
+[
+  {
+    "label": "/start sends greeting and hint",
+    "input": { "message": { "text": "/start" } },
+    "expect": { "reply": { "text": "Hello! I'm QuoteBot. Send /quote for an inspirational quote or /count to see how many quotes I've served." } }
+  },
+  {
+    "label": "/quote sends a quote from the built-in list",
+    "input": { "message": { "text": "/quote" } },
+    "expect": { "reply": { "containsAny": [
+      "The only way to do great work is to love what you do. \u2014 Steve Jobs",
+      "Life is what happens when you're busy making other plans. \u2014 John Lennon",
+      "Do not wait to strike till the iron is hot; but make it hot by striking. \u2014 William Butler Yeats",
+      "Whether you think you can or you think you can\u2019t, you\u2019re right. \u2014 Henry Ford",
+      "The future belongs to those who believe in the beauty of their dreams. \u2014 Eleanor Roosevelt",
+      "It does not matter how slowly you go so long as you do not stop. \u2014 Confucius",
+      "You miss 100% of the shots you don\u2019t take. \u2014 Wayne Gretzky",
+      "Believe you can and you\u2019re halfway there. \u2014 Theodore Roosevelt",
+      "Act as if what you do makes a difference. It does. \u2014 William James",
+      "Be the change that you wish to see in the world. \u2014 Mahatma Gandhi"
+    ] } }
+  },
+  {
+    "label": "/count reports quotes served as a number",
+    "input": { "message": { "text": "/count" } },
+    "expect": { "reply": { "contains": "Quotes served since launch:" } }
+  }
+]
